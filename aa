@@ -1,0 +1,220 @@
+const express = require('express');
+const app = express();
+const port = 3000;
+const expressHbs = require('express-handlebars');
+const fs = require('fs');
+const bodyparser = require('body-parser');
+const { MongoClient } = require('mongodb');
+const { response } = require('express');
+
+
+app.engine("hbs", expressHbs.engine(
+    {
+        layoutsDir: "views", 
+        extname: "hbs"
+    }
+));
+app.set("view engine", "hbs");
+app.use(express.static(__dirname + "/views"));
+app.use(bodyparser.urlencoded({extended: true}));
+
+const mongoUrl = 'mongodb+srv://admin:schjjl31082006@cluster0.itj23.mongodb.net/test';
+const client = new MongoClient(mongoUrl);
+
+
+async function main() {
+    await client.connect();
+    const db_users = client.db('users');
+    const collection_users = db_users.collection('personal_info');
+
+    const db_groups = client.db('groups');
+    const collection_groups = db_groups.collection('lessons');
+
+    let users = await collection_users.find({}).toArray();
+    let groups = await collection_groups.find({}).toArray();
+    console.log('Found documents =>', users); 
+    
+    
+    app.get('/', async function(req, res) {
+        res.render('main');
+    });
+    
+    app.get('/login', async function(req, res) {
+        res.render('login', {layout: 'login'});
+    });
+
+    app.post('/auth', async function(req, res) {
+        const filteredUser = await collection_users.find({ login: req.body.login }).toArray();
+        let status = '';
+        if(filteredUser.length) {
+            if(filteredUser[0].password == req.body.password) {
+                res.redirect('/journal');
+            } else {
+                status = 'Пароль не правильний!';
+            }
+        } else {
+            status = 'Такого користувача не знайдено!';
+        }
+        res.render('login', {
+            layout: 'login',
+            login: req.body.login,
+            password: req.body.password,
+            state: status
+        });
+    });
+
+    app.get('/api/journal/:group/users', async function(req, res) {
+        let findUsers = await collection_users.find({ group: req.params.group }, {second_name: "", first_name: "", marks: [], group: "" }).toArray();
+
+        let filteredUsers = findUsers.map(function (user) {
+            return{
+                first_name: user.first_name,
+                second_name: user.second_name,
+                marks: user.marks,
+                group: user.group 
+
+            }
+        })
+    }); 
+
+    app.get('/api/journal/:group/users', async function(req, res) {
+        let findUsers = await collection_users.find({ group: req.params.group }).toArray();
+        res.send(findUsers);
+
+        let filteredUsers = findUsers.map(function (user) {
+            return{
+                first_name: user.first_name,
+                second_name: user.second_name,
+                marks: user.marks,
+                group: user.group 
+
+            }
+        })
+    });
+
+    app.get('/api/journal/:group/lessons', async function(req, res) {
+        let findLessons = await collection_group.find({ group: req.params.group }).toArray();
+        res.send(findLessons);
+    });
+
+
+    app.get('/journal/:group', async function(req, res) {
+        res.render('journal', {
+            layout: 'journal',
+            group: req.params.group
+        })
+    }); 
+
+    if (findGroup.length) {
+        let students = Object.keys(findGroup[0].calendar[0].marks);
+        let html = '';
+        for (let i = 0; i < users.length; i++) {
+            let marks = "";
+            let mark = users[i].marks[monthes[currentMonth]];
+            
+            for (let j = 0;  j < 9; j++){
+                if (mark) {
+                    let day = Object.keys(mark);
+ 
+                    html += `
+                    <div class="cell">
+                        <input type="text" class="mark mark-class_work" value="${marks[j].lesson_mark}">
+                        <input type="text" class="mark mark-home_work" value="${marks[j].homework_mark}">
+                    </div>
+                     `
+                } else{
+                    html += `
+                    <div class="cell">
+                        <input type="text" class="mark mark-class_work">
+                        <input type="text" class="mark mark-home_work"">
+                    </div>
+                    `
+                }
+            }
+            html += `</div>`;
+        }
+        console.log(html)
+        res.render('journal' , {
+            layout : 'journal',
+            group_name : findGroup[0].group_name,
+            calendar : findGroup[0].calendar,
+            html: html
+            });
+        } else {
+            console.log('Група не знайдена')
+        }
+
+        res.render('journal', {layout: 'journal'});
+    };
+    
+
+
+    // let save_button = document.querySelector('.save');
+
+    // save_button.addEventListener("click" , async function(){
+    //     let rows = document.querySelectorAll(".row:not(.row-button)");
+    //     let marks = [];
+
+
+    //     for (let i = 0; i < rows.length; i++) {
+    //         let user_name = rows[i].querySelector('.title').innerText;
+    //         let second_name = user_name.split(' ')[0];
+    //         let first_name = user_name.split(' ')[0];
+
+    //         marks[i] = {
+    //             second_name: second_name,
+    //             first_name: first_name,
+    //             marks: {
+    //                 [mothes[currentMonth]]: {}
+    //             }
+    //         };
+        
+
+    //         rows[i].querySelectorAll('input').forEach(input => {
+    //             let day = input.getAttribute('name');
+    //             if (day) {
+    //                 marks[i].marks[mothes[currentMonth]][day] = []; 
+    //             }
+    //         });
+    //         rows[i].querySelectorAll('input').forEach(input => {
+    //             let day = input.getAttribute('name');
+    //             if (day) {
+    //                 marks[i].marks[mothes[currentMonth]][day].push(+input.value); 
+    //             }
+    //         });
+    //         console.log(marks);
+    //     }
+    //     await fetch(`/api${winsow.location.pathname}/update`, {
+    //         method: 'POST',
+    //         body: JSON.stringify(marks),
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         }
+    //     });
+    // });
+
+
+
+
+
+    app.post('/new_user', async function (req, res){
+        collection_users.insertOne({
+            ... req.body,
+            permissions: 'student'
+        });
+    });
+
+    app.listen(port, async function(){
+        console.log('running');
+    });
+
+main();
+
+
+
+
+
+
+
+
+

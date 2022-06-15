@@ -1,0 +1,133 @@
+
+
+.container{
+	width: 1305px;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	background: linear-gradient(111.1deg, #F7F7F7 0%, #FDFDFD 100%);
+border-radius: 0px 0px 12px 12px;
+}
+.qawsed{
+	width: 100%;
+	margin: 0 auto;
+}
+.block_upper{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+.date_date{
+	width: 926px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+
+}
+.dataa{
+	height: 31px;;
+	width: 109px;
+	margin-left: -2.5px;
+	background: #F2F2F2;
+border: 1px solid #C7C7C7;
+
+}
+.date{
+ height: 31px;;
+	width: 109px;
+	margin-left: 7.4px;
+	background: #F2F2F2;
+border: 1px solid #C7C7C7;
+
+
+}
+.name_surname{
+	width: 316px;
+	margin-right: 10px;
+	background: #F2F2F2;
+	border: 1px solid #C7C7C7;
+	
+}
+.cont{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.marks{
+	width: 1194px;
+	margin-left: 27px;
+	margin-top: 1.5px;
+}
+.block_info{
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+}
+.marks_input{
+	width: 46px;
+	height: 30px;
+	margin: 1.6px;
+}
+.persona_info{
+	width: 313px;
+height: 30px;
+margin-bottom: 3.2px;
+}
+
+.persona_info1{
+	width: 313px;
+height: 30px;
+margin-bottom: 3.2px;
+margin-top: 3px;
+}
+
+
+
+.mounth{
+	width: 100px;
+	height: 42px;
+	background: #F7F7F7;
+	border-radius: 12px 12px 0px 0px;
+	font-family: 'Roboto';
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 31px;	
+	text-align: center;
+	text-transform: capitalize;
+	background: #F2F2F2;
+border: 1px solid #C7C7C7;
+
+}
+
+.block_mounth{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;	
+	margin-bottom: 14px;
+}
+input.mounth:focus {
+	font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 31px;
+text-align: center;
+text-transform: capitalize;
+cursor: pointer;
+color: #374053;
+  }
+
+  .input__img{
+	width: 30px;
+	height: 30px;
+  }
+  .block__inputup{
+	  width: 140px;
+	  height: 40px;
+	  float: right;
+  }

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style_comment.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="qapz">
+			<nav>
+				<ul id="ul">
+            		<li class="text-all filter__type" onclick="filter0()" data-f="all">Всі</li>
+               		<li data-f="alizarin" class="text-alizarin filter__type" onclick="filter1()">Відгуки учнів</li>
+               		<li data-f="wisteria" class="text-wisteria filter__type" onclick="filter2()">Відгуки батьків</li>
+               		<li data-f="emerland" class="text-emerland filter__type" onclick="filter3()">Відгуки випускників</li>
+				</ul>
+				<select name="" id="" class="adding__input">
+            		<option value="">Відмінно - 5/5</option>
+            		<option value="">Чудово - 4/5</option>
+            		<option value="">Задоволений - 3/5</option>
+            		<option value="">Нормально - 2/5</option>
+            		<option value="">Погано - 1/5</option>
+            		<option value="">Жахливо - 0/5</option>
+        		</select>
+			</nav>
+			 <div class="container">
+    		    <div class="block-cover">
+				
+    		    </div>
+    		</div>
+
+
+
+
+
+
+
+
+			
+		
+		<div class="tbody">
+			<div class="row1">
+				<button class="add-student1">Загрузити ще...</button>	
+			</div>
+			<div class="row">
+				<button class="add-student">Добавити відгук</button>	
+			</div>
+		</div>
+	</form> 
+	
+	<div class="modal">
+		<form action="/newcomm" id="new_user" method="POST">
+			<p class="aaa">Додати відгук</p>
+			<img class="aaaa" src="img/close.png" alt="">
+			<div class="left">
+
+				<label for="second_name">Прізвище:</label><br>
+				<input type="text" id="second_name" name="surname"><br>
+
+				<label for="first_name">Ім’я: </label><br>
+				<input type="text" id="first_name" name="name"><br>
+
+			</div>
+			<div class="right">
+				<label for="phone">Оцінка школи:</label><br>
+				<select name="stars" id="" class="adding__input_modal">
+            		<option value="5">Відмінно - 5/5</option>
+            		<option value="4">Чудово - 4/5</option>
+            		<option value="3">Задоволений - 3/5</option>
+            		<option value="2">Нормально - 2/5</option>
+            		<option value="1">Погано - 1/5</option>
+            		<option value="0">Жахливо - 0/5</option>
+        		</select>
+
+				<label class="who_u" for="">Хто ви для школи?</label><br>
+				<select name="whou" id="" class="adding__input_modal2">
+            		<option value="Учень">Учень</option>
+            		<option value="Випускник">Випускник</option>
+            		<option value="Тато учня">Тато учня</option>
+					<option value="Мама учня">Мама учня</option>
+        		</select>
+				
+			</div>
+			<label class="vidgyk" for="phone">Відгук:</label><br>
+			<div class="center">
+				<input type="text"  name="comment" class="rerere"><br>
+			</div>
+			<div class="buttton">
+				<div class="block_subres">
+					<button class="reset" type="reset"></button><br>
+					<button class="submit" type="submit"></button><br>
+				</div>
+			</div>
+		</form>
+	</div>
+	</div>
+</div>
+	
+<script src="/js/comment.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/css/style_journal.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<form class="journal" method="post" action="/api/journal/{{group}}/update">
+		<div class="menu">
+			<button class="save" type="submit">Зберегти</button>
+		</div>
+		<div class="month-table">
+			<div class="thead">
+				<div class="cell">Прізвище та ім'я учня</div>
+					{{#each calendar}}
+						{{#if this.current}}
+							{{#each this.lessons}}
+								<div class="cell">{{this.day_date}}</div>
+							{{/each}}
+						{{/if}}
+					{{/each}}
+			</div> 
+			<div class="tbody">
+				<div class="row">
+					<button class="add-student"><i class="plus">+</i>Добавити учня</button>	
+				</div>
+			</div>
+		</div>
+	</form> 
+	
+	<div class="modal">
+		<form action="/new_user/{{group}}" id="new_user" method="POST">	
+			<p class="aaa">Добавити учня:</p>
+			<img class="aaaa" src="/img/close.png" alt="">
+			<div class="left">
+				<label for="second_name">Прізвище учня:</label><br>
+				<input type="text" id="second_name" name="second_name"><br>
+
+				<label for="first_name">Ім’я учня:</label><br>
+				<input type="text" id="first_name" name="first_name"><br>
+
+				<label for="birthday">День народження:</label><br>
+				<input type="datetime-local" id="birthday" name="birthday"><br>
+
+				<label for="telegram">Telegram учня:</label><br>
+				<input type="text" id="telegram" name="telegram"><br>
+
+				<label for="email">Email учня:</label><br>
+				<input type="email" id="email" name="email"><br>
+
+				<label for="login">Логін щоденника:</label><br>
+				<input type="text" id="login" name="login"><br>
+
+				<label for="password">Пароль щоденника:</label><br>
+				<input type="password" id="password" name="password"><br>
+			</div>
+			<div class="right">
+				<label for="phone">Номер телефону:</label><br>
+				<input type="text" id="phone" name="phone"><br>
+
+				<label for="phone">Фото:</label><br>
+				<input type="file" id="image" name="phone"><br>
+				<div class="block_subres">
+					<button class="reset" type="reset">  </button><br>
+					<button class="submit" type="submit"></button><br>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+	
+<script src="/js/jounralscript.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <div class="journal">
+			
+	{{!-- {{!-- <div class="menu">
+		{{#each calendar}}
+			{{#if this.current}}
+				<div class="month active">{{this.mounth}}</div>
+			{{else}}
+				<div class="month">{{this.mounth}}</div>
+			{{/if}}
+		{{/each}}
+	</div>
+	<div class="month-table">
+		<div class="thead">
+			<div class="cell">Прізвище та ім’я учня</div>
+			{{#each calendar}}
+				{{#if this.current}}
+					{{#each this.lessons}}
+						<div class="cell">{{this.day_date}}</div>
+					{{/each}}
+				{{/if}}
+			{{/each}}
+		</div> --}} 

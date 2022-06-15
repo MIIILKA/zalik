@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="content">	
+			<div class="left">
+				<p class="first_text">Найкращий щоденник</p>
+				<p class="second_text">для успішних учнів</p>
+				<p class="big_text">Найбільшу роль в освітньому процесі на сьогодні є допомога учневі в пізнанні вивчаємого матеріалу, а саме у взаємному звязку між учнем та учителем. Саме тому ми представляємо вам щоденник, в якому учні нашого навчального закладу зможуть скористатись усіма сучасними методами комунікації та отримають новий досвід у вивченні програмування.</p>
+			</div>
+			<div class="right">
+				<div class="wrapper">
+				   <form class="form-signin" action="/auth" method="POST">       
+				     	<input type="text" class="form-control" name="login" placeholder="Логін" required="" autofocus="" />
+				     	<input type="password" class="form-control" name="password" placeholder="Пароль" required=""/> 
+
+						 {{#if state}}
+                       		<p class="main__status">{{state}}</p>
+                   		{{/if}}
+
+				     	<div class="block_w1">
+							<div class="lefteee">
+								<div class="bloque">
+									<input class="checkbox" type="checkbox">
+									<p class="rememberMe">Запам’ятай мене</p>	
+								</div>
+								<p class="remember_password">Забув пароль?</p>							
+							</div>
+						</div>
+						<input class="btn btn-lg btn-primary btn-block btn-block11" type="submit"></input>   
+				    	<div class="lefteee">	
+							<p class="rememberMe">Немаєте аккаунта?</p>
+							<p class="remember_password">Звязатись з нами</p>							
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer_container">
+				<img class="image_logo" src="/img/imagelogo.png">
+				<p class="footer_text">Copyright © 2022. Усі права захищено. </p>
+				<img class="image_footer" src="/img/logos_tvitgy.png" alt="">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

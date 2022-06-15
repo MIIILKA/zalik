@@ -1,0 +1,252 @@
+.container{
+	width: 100%;
+	height: 100%;
+
+}
+.content{
+	width: 1100px;
+	height: 500px;
+	margin: 0 auto;
+	position: absolute;
+	top: calc(50% - 500px / 2 - 75px);
+	left: calc(50% - 1100px / 2);
+
+}
+.left{
+	width: 522px;
+	height: 320px;
+
+}
+.first_text{
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 58px;
+	color: #4F4F4F;
+}
+.second_text{
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 58px;	
+	color: #1266F1;
+	margin-top: -50px;
+}
+.big_text{
+	font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 26px;
+color: #939BA6;
+}
+
+
+
+.btn-block11{
+	margin-left: 12px;
+}
+.right{
+	width: 435px;
+	height: 369px;
+	float: right;
+	margin-top: -400px;
+
+}
+.wrapper {	
+	margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);  
+}
+.form-signin-heading,
+.checkbox {
+  margin-bottom: 15px;
+
+}
+.rememberMe{
+margin: 20px;
+margin-left: 3px;
+margin-right: 5px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+
+color: #374053;
+}
+.checkbox {
+  font-weight: normal;
+  margin-top: 15px;
+  
+}
+.form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+}
+input[type="text"] {
+	margin-top: 25px;
+	background: #FFFFFF;
+	border: 1px solid #BDBDBD;
+	border-radius: 5px;
+	width: 340px;
+	margin-bottom: -1px;
+  	margin-bottom: 30px;
+}
+input[type="password"] {
+	width: 340px;
+	background: #FFFFFF;
+	border: 1px solid #BDBDBD;
+	border-radius: 5px;
+	margin: 0 auto;
+}
+.btn-block{
+	width: 340px;
+	height: 36px;
+	background: #000;
+	background: #1266F1;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2), 0px 4px 20px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	color: white;	
+	cursor: pointer;
+}
+
+
+
+.remember_password{
+	font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+cursor: pointer;
+
+color: #1266F1;
+}
+.block_other{
+	margin-left: 10px;
+	width: 340px;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+.no_acc{
+	
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+cursor: pointer;
+
+color: #374053;
+
+}
+.connect_with_me{
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
+	
+	color: #1266F1;
+	cursor: pointer;
+}
+.blockkk{
+	margin: 0 auto;
+	width: 97%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.forget_password{
+	font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 26px;
+
+color: #1266F1;
+}
+.bloque{
+	width: 60%;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	margin-left: 0px;
+}
+
+
+
+
+
+.lefteee{
+	margin: 0 auto;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+}
+.asdf{
+	margin-left: 10px;
+	width: 340px;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 5px;
+	margin-bottom: -25px;
+}
+
+.footer{width: 100%;
+	height: 75px;
+	background: #1266F1;
+	position: absolute;
+	bottom: 0px;
+
+}
+.footer_container{
+	width: 1100px;
+	height: 100%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+}
+.image_logo{
+	width: 30px;
+	height: 28.67px;
+}
+.footer_text{
+	width: 253px;
+height: 16px;
+font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+color: white;
+margin-left: 30px;
+}
+.image_logo{
+	width: 30px;
+	height: 28.67px;
+}
+.image_footer{
+	width: 220px;
+	height: 20px;
+margin-left: 540px;}
+
+
+
+
